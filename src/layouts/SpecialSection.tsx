@@ -80,7 +80,7 @@ const SpecialSection = () => {
           <span className="animate-change-to-orange">2</span>
         </span>
         <span className="absolute right-1/2 mr-[-12.5rem] animate-move-up-old-number">
-          3
+          4
         </span>
         <span
           className={mergeClassnames(
@@ -89,7 +89,7 @@ const SpecialSection = () => {
             'before:rotate-0 before:origin-[left_top] before:animate-transform-from-old-to-new',
           )}
         >
-          4
+          5
         </span>
         <div
           className={mergeClassnames(
