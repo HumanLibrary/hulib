@@ -21,51 +21,7 @@ export const FlipBook = ({ data }: BookCommonProps) => {
     topics,
     storyReview,
     humanBook,
-    abstract = 'Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar\n' +
-      '          tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae\n' +
-      '          dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras\n' +
-      '          ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo\n' +
-      '          mauris.',
+    abstract = 'Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar tempor dui massa ut. Egestas nunc mi tristique ornare commodo vitae dignissim commodo. Pellentesque nulla nam ante turpis velit amet cras ac aliquam. Ut amet nulla lobortis amet. Varius aliquam commodo mauris.Lorem ipsum dolor sit amet consectetur. Eget magna vel platea pulvinar',
   } = data;
   const [isFlipped, setIsFlipped] = useState(false);
   const router = useRouter();
@@ -92,10 +48,8 @@ export const FlipBook = ({ data }: BookCommonProps) => {
       <div className={`flip-card ${isFlipped ? 'flipped' : ''}`}>
         <div className="flip-card-front">
           <div className="grid h-full w-full grid-cols-2 gap-x-4 rounded-2xl bg-[#FFFFFF] p-4 shadow-[3px_4px_5px_3px_#1C1E211A]">
-            <div className="flex w-full flex-col gap-y-2 py-2">
-              <h6 className="break-words text-xl font-medium text-primary-10">
-                {title ?? 'Cứ làm đi biết đâu thất bại'}
-              </h6>
+            <div className="relative flex h-full w-full flex-col gap-y-2 py-2">
+              <h6 className="book-title">{title}</h6>
               <div className="flex items-center gap-x-2">
                 {topics?.map((topic) => (
                   <p
@@ -126,29 +80,18 @@ export const FlipBook = ({ data }: BookCommonProps) => {
                   {storyReview?.numberOfReviews ?? 0} rating
                 </p>
               </div>
-              <div
-                className={mergeClassnames(
-                  'flex h-full flex-col items-center gap-2 justify-self-end mt-5',
-                  'md:flex-row md:mt-10',
-                )}
-              >
+              <div className={mergeClassnames('flex items-center gap-2 mt-4')}>
                 <Button
                   variant="primary"
                   iconLeft={<BookOpen size={20} weight="bold" />}
-                  className={mergeClassnames(
-                    'text-sm font-medium h-8 max-h-8 flex-none w-full',
-                    'md:h-11 md:max-h-11 md:flex-[1]',
-                  )}
+                  className={mergeClassnames('text-sm font-medium py-3 px-6')}
                   onClick={() => router.push(`/explore-story/${data?.id}`)}
                 >
                   Read all
                 </Button>
                 <Button
                   variant="outline"
-                  className={mergeClassnames(
-                    'w-full h-8',
-                    'md:size-11 md:min-h-11 md:min-w-11',
-                  )}
+                  className={mergeClassnames('p-3')}
                   iconOnly
                   onClick={() => handleAddToFavorites(data?.id)}
                 >
@@ -156,30 +99,30 @@ export const FlipBook = ({ data }: BookCommonProps) => {
                 </Button>
               </div>
             </div>
-            <div className="relative flex w-full flex-col gap-y-4">
+            <div className="relative flex h-full w-full items-center justify-center">
               <button type="button" onClick={handleFlip}>
                 <Image
                   src={cover?.path ?? '/assets/images/image-test.png'}
                   alt="book cover"
-                  fill
                   priority
                   quality={100}
-                  className="object-fill"
+                  width={180}
+                  height={255}
                 />
               </button>
             </div>
           </div>
         </div>
         <div className="flip-card-back">
-          <div className="relative grid h-full w-full grid-cols-2 rounded-2xl bg-[#FFFFFF] p-4 shadow-[3px_4px_5px_3px_#1C1E211A]">
+          <div className="grid h-full w-full grid-cols-2 gap-x-4 rounded-2xl bg-[#FFFFFF] p-4 shadow-[3px_4px_5px_3px_#1C1E211A]">
             <button type="button" onClick={handleFlip}>
-              <div className="flex h-full w-full flex-col">
+              <div className="relative flex h-full w-full flex-col">
                 <h6 className="break-words text-xl font-medium text-primary-10">
-                  {title ?? 'Cứ làm đi biết đâu thất bại'}
+                  {title}
                 </h6>
                 <textarea
                   readOnly
-                  value={abstract?.substring(0, 400) ?? ''}
+                  value={abstract?.substring(0, 200) ?? ''}
                   className="h-full w-full resize-none text-left text-sm text-neutral-30"
                 />
               </div>
@@ -187,16 +130,13 @@ export const FlipBook = ({ data }: BookCommonProps) => {
             <div className="relative flex h-full w-full flex-col gap-y-2">
               <textarea
                 readOnly
-                value={abstract?.substring(400) ?? ''}
+                value={abstract?.substring(200, 380) ?? ''}
                 className="h-full w-full resize-none text-left text-sm text-neutral-30"
               />
               <Button
                 variant="primary"
                 iconLeft={<BookOpen size={20} weight="bold" />}
-                className={mergeClassnames(
-                  'text-sm font-medium h-8 max-h-8 flex-none w-full',
-                  'md:h-11 md:max-h-11 md:flex-[1]',
-                )}
+                className={mergeClassnames('text-sm font-medium py-3 px-6')}
                 onClick={() => router.push(`/explore-story/${data?.id}`)}
               >
                 Read all
